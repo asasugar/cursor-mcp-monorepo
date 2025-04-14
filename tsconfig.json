@@ -1,15 +1,22 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "nodenext",
+    "baseUrl": ".",
+    "noEmit": false,
+    "target": "esnext",
+    "allowJs": true,
+    "module": "esnext",
     "outDir": "./build",
-    "rootDir": "./packages/todo-app/src",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "moduleResolution": "nodenext"
+    "moduleResolution": "node",
+    "types": [
+      "node"
+    ]
   },
-  "include": ["packages/todo-app/src"],
-  "exclude": ["node_modules", "dist"]
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }

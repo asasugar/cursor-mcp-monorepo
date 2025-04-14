@@ -11,7 +11,6 @@ const TODO_FILE_PATH = './todos.json';
 function loadTodos(): TodoItem[] {
   try {
     const data = fs.readFileSync(TODO_FILE_PATH, 'utf-8');
-    console.log('%c [ data ]-14', 'font-size:13px; background:pink; color:#bf2c9f;', data)
     return JSON.parse(data);
   } catch (error) {
     console.error("Error loading todos, starting with an empty list.", error);

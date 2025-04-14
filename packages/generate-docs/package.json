@@ -1,0 +1,17 @@
+{
+  "name": "cursor-mcp-generate-docs",
+  "version": "1.0.0",
+  "description": "Generate docs for MCP",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "start": "node build/index.js"
+  },
+  "keywords": [],
+  "author": "Jay Hsueh",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.8.4"
+  }
+}
