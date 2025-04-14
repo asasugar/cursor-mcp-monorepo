@@ -1,5 +1,6 @@
 {
   "name": "cursor-mcp-monorepo",
+  "description": "A monorepo for Cursor MCP",
   "version": "1.0.0",
   "private": true,
   "workspaces": [
