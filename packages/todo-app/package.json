@@ -1,0 +1,23 @@
+{
+  "name": "cursor-mcp-todo-app",
+  "version": "1.0.0",
+  "description": "A simple todo app using MCP",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "start": "node build/index.js"
+  },
+  "keywords": [],
+  "author": "Jay Hsueh",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "fs": "0.0.1-security",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.9.0",
+    "zod": "^3.24.2"
+  }
+}

@@ -3,13 +3,13 @@
     "target": "ESNext",
     "module": "nodenext",
     "outDir": "./build",
-    "rootDir": "./src",
+    "rootDir": "./packages/todo-app/src",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "moduleResolution": "nodenext",
+    "moduleResolution": "nodenext"
   },
-  "include": ["src"],
+  "include": ["packages/todo-app/src"],
   "exclude": ["node_modules", "dist"]
 }

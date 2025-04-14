@@ -1,16 +1,13 @@
 {
-  "name": "cursor-mcp-tpl",
+  "name": "cursor-mcp-monorepo",
   "version": "1.0.0",
-  "description": "",
-  "type": "module",
-  "main": "src/index.ts",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
-    "build": "tsc",
-    "start": "node build/index.js"
+    "build:todo-app": "pnpm --filter ./packages/todo-app build"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "@types/node": "^22.14.0",
     "typescript": "^5.8.3"
