@@ -1,7 +1,7 @@
 {
-  "name": "cursor-mcp-generate-docs",
+  "name": "cursor-mcp-admin-helper",
   "version": "1.0.0",
-  "description": "Generate docs for MCP",
+  "description": "Admin-helper for MCP",
   "type": "module",
   "main": "src/index.ts",
   "scripts": {

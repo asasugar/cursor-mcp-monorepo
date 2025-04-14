@@ -16,7 +16,7 @@ const DIFY_API_URL = apiUrlIndex !== -1 ? args[apiUrlIndex + 1] : null;
 
 // Initialize MCP Server
 const server = new McpServer({
-  name: "generate-docs-mcp-server",
+  name: "admin-helper-mcp-server",
   version: "1.0.0",
 });
 
@@ -28,7 +28,7 @@ if (!DIFY_API_KEY || !DIFY_API_URL) {
 }
 
 // Define the tool logic
-const generateDocsTool = async ({ text, }: { text: string; }) => {
+const adminHelperTool = async ({ text, }: { text: string; }) => {
 
   const headers = {
     "Authorization": `Bearer ${DIFY_API_KEY}`,
@@ -54,11 +54,11 @@ const generateDocsTool = async ({ text, }: { text: string; }) => {
 
 // Register the tool with the MCP server
 server.tool(
-  "generateDocs",
+  "@adminHelper",
   { text: z.string() },
   async ({ text }) => {
 
-    const result = await generateDocsTool({ text });
+    const result = await adminHelperTool({ text });
 
     return {
       content: result.content.map(item => ({

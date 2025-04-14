@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "build:todo-app": "pnpm --filter ./packages/todo-app build",
-    "build:generate-docs": "pnpm --filter ./packages/generate-docs build"
+    "build:admin-helper": "pnpm --filter ./packages/admin-helper build"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",
