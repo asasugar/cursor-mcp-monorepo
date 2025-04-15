@@ -46,9 +46,7 @@ async function saveTodos (todos: TodoItem[]) {
   }
 }
 
-// Initialize an empty array to store todo items in memory
-const todos: TodoItem[] = await loadTodos();
-let nextId = todos.length > 0 ? Math.max(...todos.map(t => t.id)) + 1 : 1;
+
 
 // Create an MCP server instance
 const server = new McpServer({
@@ -81,6 +79,8 @@ server.tool(
   { id: z.number() },
   async ({ id }) => {
     // Find the todo item by ID and mark it as done
+    // Initialize an empty array to store todo items in memory
+    const todos: TodoItem[] = await loadTodos();
     const task = todos.find(t => t.id === id);
     if (!task) {
       return {
@@ -127,8 +127,7 @@ server.tool(
   {},
   async ({ }) => {
     try {
-      todos.length = 0;
-      await saveTodos(todos);
+      await saveTodos([]);
       return {
         content: [{
           type: "text",
