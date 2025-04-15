@@ -8,6 +8,8 @@
     "packages/*"
   ],
   "scripts": {
+    "debug:todo-app": "pnpm --filter ./packages/todo-app debug",
+    "debug:admin-helper": "pnpm --filter ./packages/admin-helper debug",
     "build:todo-app": "pnpm --filter ./packages/todo-app build",
     "build:admin-helper": "pnpm --filter ./packages/admin-helper build"
   },
@@ -16,6 +18,7 @@
     "typescript": "^5.8.3"
   },
   "dependencies": {
+    "@modelcontextprotocol/inspector": "^0.8.2",
     "@modelcontextprotocol/sdk": "^1.9.0",
     "zod": "^3.24.2"
   }

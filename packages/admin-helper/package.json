@@ -6,7 +6,8 @@
   "main": "src/index.ts",
   "scripts": {
     "build": "tsc",
-    "start": "node build/index.js"
+    "start": "node build/index.js",
+    "debug": "npx @modelcontextprotocol/inspector node ./build/index.js"
   },
   "keywords": [],
   "author": "Jay Hsueh",
