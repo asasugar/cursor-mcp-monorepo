@@ -1,32 +1,8 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
-import fs from 'fs';
-// File path for storing todos
-const TODO_FILE_PATH = './todos.json';
-// Function to load todos from a file
-function loadTodos() {
-    try {
-        const data = fs.readFileSync(TODO_FILE_PATH, 'utf-8');
-        return JSON.parse(data);
-    }
-    catch (error) {
-        console.error("Error loading todos, starting with an empty list.", error);
-        return [];
-    }
-}
-// Function to save todos to a file
-function saveTodos(todos) {
-    try {
-        fs.writeFileSync(TODO_FILE_PATH, JSON.stringify(todos, null, 2));
-        console.log(`Todos saved to ${TODO_FILE_PATH}`);
-    }
-    catch (error) {
-        console.error("Error saving todos.", error);
-    }
-}
 // Initialize an empty array to store todo items in memory
-const todos = loadTodos();
+const todos = [];
 let nextId = todos.length > 0 ? Math.max(...todos.map(t => t.id)) + 1 : 1;
 // Create an MCP server instance
 const server = new McpServer({
@@ -47,7 +23,6 @@ server.resource("todo-list", "todo://list", async (uri) => {
 server.tool("addTodo", { text: z.string() }, async ({ text }) => {
     const newTask = { id: nextId++, text: String(text), done: false };
     todos.push(newTask);
-    saveTodos(todos);
     return {
         content: [{
                 type: "text",
@@ -65,7 +40,6 @@ server.tool("completeTodo", { id: z.number() }, async ({ id }) => {
         };
     }
     task.done = true;
-    saveTodos(todos);
     return {
         content: [{
                 type: "text",
