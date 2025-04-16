@@ -54,7 +54,7 @@ const adminHelperTool = async ({ text, }: { text: string; }) => {
 
 // Register the tool with the MCP server
 server.tool(
-  "@adminHelper",
+  "adminHelper",
   { text: z.string() },
   async ({ text }) => {
 
@@ -69,7 +69,6 @@ server.tool(
   }
 );
 
-// Start the MCP server
-console.error("📡 MCP server started. Waiting for client connection...");
+
 const transport = new StdioServerTransport();
 await server.connect(transport);
