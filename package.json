@@ -20,6 +20,7 @@
   "dependencies": {
     "@modelcontextprotocol/inspector": "^0.8.2",
     "@modelcontextprotocol/sdk": "^1.9.0",
+    "tailwindcss": "^4.1.4",
     "zod": "^3.24.2"
   }
 }

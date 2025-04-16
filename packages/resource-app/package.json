@@ -1,7 +1,7 @@
 {
-  "name": "cursor-mcp-todo-app",
+  "name": "cursor-mcp-resource-app",
   "version": "1.0.0",
-  "description": "A simple todo app using MCP",
+  "description": "A simple resource app using MCP",
   "type": "module",
   "main": "src/index.ts",
   "scripts": {
@@ -11,8 +11,5 @@
   },
   "keywords": [],
   "author": "Jay Hsueh",
-  "license": "ISC",
-  "devDependencies": {
-    "fs": "0.0.1-security"
-  }
+  "license": "ISC"
 }

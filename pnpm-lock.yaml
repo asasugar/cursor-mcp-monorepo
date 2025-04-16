@@ -10,10 +10,13 @@ importers:
     dependencies:
       '@modelcontextprotocol/inspector':
         specifier: ^0.8.2
-        version: 0.8.2(@types/node@22.14.0)(typescript@5.8.3)
+        version: 0.8.2(@types/node@22.14.0)(tailwindcss@4.1.4)(typescript@5.8.3)
       '@modelcontextprotocol/sdk':
         specifier: ^1.9.0
         version: 1.9.0
+      tailwindcss:
+        specifier: ^4.1.4
+        version: 4.1.4
       zod:
         specifier: ^3.24.2
         version: 3.24.2
@@ -21,25 +24,6 @@ importers:
       '@types/node':
         specifier: ^22.14.0
         version: 22.14.0
-      typescript:
-        specifier: ^5.8.3
-        version: 5.8.3
-
-  packages/SQLite-app:
-    dependencies:
-      '@modelcontextprotocol/sdk':
-        specifier: ^1.9.0
-        version: 1.9.0
-      zod:
-        specifier: ^3.24.2
-        version: 3.24.2
-    devDependencies:
-      '@types/node':
-        specifier: ^22.14.0
-        version: 22.14.0
-      fs:
-        specifier: 0.0.1-security
-        version: 0.0.1-security
       typescript:
         specifier: ^5.8.3
         version: 5.8.3
@@ -50,24 +34,13 @@ importers:
         specifier: ^1.8.4
         version: 1.8.4
 
+  packages/resource-app: {}
+
   packages/todo-app:
-    dependencies:
-      '@modelcontextprotocol/sdk':
-        specifier: ^1.9.0
-        version: 1.9.0
-      zod:
-        specifier: ^3.24.2
-        version: 3.24.2
     devDependencies:
-      '@types/node':
-        specifier: ^22.14.0
-        version: 22.14.0
       fs:
         specifier: 0.0.1-security
         version: 0.0.1-security
-      typescript:
-        specifier: ^5.8.3
-        version: 5.8.3
 
 packages:
 
@@ -122,7 +95,7 @@ packages:
       '@jridgewell/sourcemap-codec': 1.5.0
     dev: false
 
-  /@modelcontextprotocol/inspector-client@0.8.2:
+  /@modelcontextprotocol/inspector-client@0.8.2(tailwindcss@4.1.4):
     resolution: {integrity: sha512-eqsrA4eOXBadVTU8qFr2IYnxyY97+DfMDhl9LYuEHMIuEWjRObNGI/H3JFwDFpCkV4GOgWSBjfdIQ5yzUy7LKA==}
     hasBin: true
     dependencies:
@@ -149,7 +122,7 @@ packages:
       react-simple-code-editor: 0.14.1(react-dom@18.3.1)(react@18.3.1)
       serve-handler: 6.1.6
       tailwind-merge: 2.6.0
-      tailwindcss-animate: 1.0.7
+      tailwindcss-animate: 1.0.7(tailwindcss@4.1.4)
       zod: 3.24.2
     transitivePeerDependencies:
       - '@types/react'
@@ -173,11 +146,11 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@modelcontextprotocol/inspector@0.8.2(@types/node@22.14.0)(typescript@5.8.3):
+  /@modelcontextprotocol/inspector@0.8.2(@types/node@22.14.0)(tailwindcss@4.1.4)(typescript@5.8.3):
     resolution: {integrity: sha512-ewowTh84QVUrVnIVJLx5Jhh2yJrgWa/LrcVlNhtm8Y2Uk2bgW0y0catXyeyR6dqqyDadMXq1hbPRq0Lo1zPFnQ==}
     hasBin: true
     dependencies:
-      '@modelcontextprotocol/inspector-client': 0.8.2
+      '@modelcontextprotocol/inspector-client': 0.8.2(tailwindcss@4.1.4)
       '@modelcontextprotocol/inspector-server': 0.8.2
       concurrently: 9.1.2
       shell-quote: 1.8.2
@@ -2078,10 +2051,16 @@ packages:
     resolution: {integrity: sha512-P+Vu1qXfzediirmHOC3xKGAYeZtPcV9g76X+xg2FD4tYgR71ewMA35Y3sCz3zhiN/dwefRpJX0yBcgwi1fXNQA==}
     dev: false
 
-  /tailwindcss-animate@1.0.7:
+  /tailwindcss-animate@1.0.7(tailwindcss@4.1.4):
     resolution: {integrity: sha512-bl6mpH3T7I3UFxuvDEXLxy/VuFxBk5bbzplh7tXI68mwMokNYd1t9qPBHlnyTwfa4JGC4zP516I1hYYtQ/vspA==}
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders'
+    dependencies:
+      tailwindcss: 4.1.4
+    dev: false
+
+  /tailwindcss@4.1.4:
+    resolution: {integrity: sha512-1ZIUqtPITFbv/DxRmDr5/agPqJwF69d24m9qmM1939TJehgY539CtzeZRjbLt5G6fSy/7YqqYsfvoTEw9xUI2A==}
     dev: false
 
   /toidentifier@1.0.1:
